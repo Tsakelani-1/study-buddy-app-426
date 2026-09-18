@@ -23,7 +23,7 @@ type StudyStore = {
   addTask: (task: Omit<StudyTask, "id" | "completed">) => void;
   toggleTask: (id: string) => void;
   deleteTask: (id: string) => void;
-  saveNote: (note: Omit<StudyNote, "updatedAt"> & { id?: string }) => void;
+  saveNote: (note: { id?: string | undefined; subject: string; title: string; content: string }) => void;
   deleteNote: (id: string) => void;
   resetDemoData: () => void;
   // timer
