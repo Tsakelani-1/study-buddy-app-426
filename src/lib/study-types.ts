@@ -28,7 +28,7 @@ export type SubjectColor = (typeof SUBJECT_COLORS)[number];
 export function subjectColor(subject: string): SubjectColor {
   let sum = 0;
   for (let i = 0; i < subject.length; i++) sum += subject.charCodeAt(i);
-  return SUBJECT_COLORS[sum % SUBJECT_COLORS.length];
+  return SUBJECT_COLORS[sum % SUBJECT_COLORS.length] ?? "primary";
 }
 
 export function todayISO(offsetDays = 0): string {
