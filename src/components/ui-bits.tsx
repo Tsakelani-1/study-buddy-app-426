@@ -6,7 +6,7 @@ export function Card({ className, children }: { className?: string | undefined; 
   return <div className={cn("glass-card p-5", className)}>{children}</div>;
 }
 
-export function SectionTitle({ children, action }: { children: ReactNode; action?: ReactNode }) {
+export function SectionTitle({ children, action }: { children: ReactNode; action?: ReactNode | undefined }) {
   return (
     <div className="mb-3 flex items-center justify-between gap-3">
       <h2 className="font-display text-lg font-semibold">{children}</h2>
@@ -69,7 +69,7 @@ export function ProgressBar({
   );
 }
 
-export function Stat({ label, value, caption }: { label: string; value: ReactNode; caption?: string }) {
+export function Stat({ label, value, caption }: { label: string; value: ReactNode; caption?: string | undefined }) {
   return (
     <div className="glass-card rise p-4">
       <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{label}</p>
