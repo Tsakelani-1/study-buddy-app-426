@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import type { SubjectColor } from "@/lib/study-types";
 
-export function Card({ className, children }: { className?: string; children: ReactNode }) {
+export function Card({ className, children }: { className?: string | undefined; children: ReactNode }) {
   return <div className={cn("glass-card p-5", className)}>{children}</div>;
 }
 
@@ -45,8 +45,8 @@ export function ProgressBar({
 }: {
   label: string;
   value: number;
-  caption?: string;
-  color?: SubjectColor;
+  caption?: string | undefined;
+  color?: SubjectColor | undefined;
 }) {
   const pct = Math.max(0, Math.min(100, Math.round(value)));
   return (
@@ -86,7 +86,7 @@ export function EmptyState({
 }: {
   title: string;
   description: string;
-  action?: ReactNode;
+  action?: ReactNode | undefined;
 }) {
   return (
     <div className="rounded-2xl border border-dashed border-line bg-cream/50 px-4 py-8 text-center">
@@ -141,7 +141,7 @@ export function Field({
 }: {
   label: string;
   htmlFor: string;
-  error?: string;
+  error?: string | undefined;
   children: ReactNode;
 }) {
   return (
